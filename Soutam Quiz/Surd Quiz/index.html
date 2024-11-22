@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surd Quiz</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+    </script>
+</head>
+
+<body class="body">
+    <div class="header">
+        <span class="span1">Surd Quiz</span>
+        <div class="head-footer">
+            <div class="span2"></div>
+            <div class="timer-container">
+                <div id="timer" class="timer">
+                    Time: 15:00
+                </div> <!-- Timer Display -->
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="quiz-container">
+            <div class="question-cont">
+                Q1. $\sqrt{3+2\sqrt{2}}=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question1" value="1">
+                    1. $1+\sqrt{2}$
+                </label>
+                <label>
+                    <input type="radio" name="question1" value="2">
+                    2. $-(1+\sqrt{2})$
+                </label>
+                <label>
+                    <input type="radio" name="question1" value="3">
+                    3. $\pm (2+\sqrt{1})$
+                </label>
+                <label>
+                    <input type="radio" name="question1" value="4">
+                    4. $-(2+\sqrt{1})$
+                </label>
+                <label>
+                    <input type="radio" name="question1" value="5">
+                    5. $2+\sqrt{1}$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q2. $\sqrt{2\sqrt{2\sqrt{2\sqrt{2\sqrt{2 \cdots}}}}}=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question2" value="1">
+                    1. $2$
+                </label>
+                <label>
+                    <input type="radio" name="question2" value="2">
+                    2. $5$
+                </label>
+                <label>
+                    <input type="radio" name="question2" value="3">
+                    3. $\sqrt{2}$
+                </label>
+                <label>
+                    <input type="radio" name="question2" value="4">
+                    4. $1$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q3. $\sqrt{6+\sqrt{6+\sqrt{6+\sqrt{6+\sqrt{6+ \cdots}}}}}=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question3" value="1">
+                    1. $4$
+                </label>
+                <label>
+                    <input type="radio" name="question3" value="2">
+                    2. $\sqrt{6}$
+                </label>
+                <label>
+                    <input type="radio" name="question3" value="3">
+                    3. $3$
+                </label>
+                <label>
+                    <input type="radio" name="question3" value="4">
+                    4. $\sqrt{3}$
+                </label>
+                <label>
+                    <input type="radio" name="question3" value="5">
+                    5. None of these
+                </label>
+            </div>
+            <div class="question-cont">
+                Q4. $2-\frac{1}{2-\frac{1}{2-\frac{1}{2 \cdots}}}=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question4" value="1">
+                    1. $-1$
+                </label>
+                <label>
+                    <input type="radio" name="question4" value="2">
+                    2. $1$
+                </label>
+                <label>
+                    <input type="radio" name="question4" value="3">
+                    3. $4$
+                </label>
+                <label>
+                    <input type="radio" name="question4" value="4">
+                    4. $2$
+                </label>
+                <label>
+                    <input type="radio" name="question4" value="5">
+                    5. $\frac{1}{2}$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q5. $\frac{\sqrt{3}+\sqrt{2}}{\sqrt{3}-\sqrt{2}}+\frac{\sqrt{3}-\sqrt{2}}{\sqrt{3}+\sqrt{2}}$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question5" value="1">
+                    1. $2$
+                </label>
+                <label>
+                    <input type="radio" name="question5" value="2">
+                    2. $10$
+                </label>
+                <label>
+                    <input type="radio" name="question5" value="3">
+                    3. $6$
+                </label>
+                <label>
+                    <input type="radio" name="question5" value="4">
+                    4. $8$
+                </label>
+                <label>
+                    <input type="radio" name="question5" value="5">
+                    5. $\sqrt{6}$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q6.
+                $\frac{1}{\sqrt{2}+\sqrt{3}}+\frac{1}{\sqrt{3}+2}+\frac{1}{2+\sqrt{5}}+\frac{1}{\sqrt{5}+\sqrt{6}}+\cdots
+                +\frac{1}{\sqrt{99}+10}=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question6" value="1">
+                    1. $20$
+                </label>
+                <label>
+                    <input type="radio" name="question6" value="2">
+                    2. $10+\sqrt{2}$
+                </label>
+                <label>
+                    <input type="radio" name="question6" value="3">
+                    3. $10-\sqrt{2}$
+                </label>
+                <label>
+                    <input type="radio" name="question6" value="4">
+                    4. $23$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q7. $\frac{\sqrt{3}+\sqrt{2}}{\sqrt{3}-\sqrt{2}}-\frac{\sqrt{3}-\sqrt{2}}{\sqrt{3}+\sqrt{2}}$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question7" value="1">
+                    1. $\sqrt{6}$
+                </label>
+                <label>
+                    <input type="radio" name="question7" value="2">
+                    2. $2\sqrt{6}$
+                </label>
+                <label>
+                    <input type="radio" name="question7" value="3">
+                    3. $3\sqrt{6}$
+                </label>
+                <label>
+                    <input type="radio" name="question7" value="4">
+                    4. $4\sqrt{6}$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q8. $\frac{\sqrt{3}+\sqrt{2}}{\sqrt{7}+\sqrt{5}}$ (sym) $\frac{\sqrt{7}-\sqrt{5}}{\sqrt{3}-\sqrt{2}}$,
+                (sym)=?
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question8" value="1">
+                    1. $\geq$
+                </label>
+                <label>
+                    <input type="radio" name="question8" value="2">
+                    2. $\leq$
+                </label>
+                <label>
+                    <input type="radio" name="question8" value="3">
+                    3. $<$ </label>
+                        <label>
+                            <input type="radio" name="question8" value="4">
+                            4. $=$
+                        </label>
+                        <label>
+                            <input type="radio" name="question8" value="5">
+                            5. $>$
+                        </label>
+            </div>
+            <div class="question-cont">
+                Q9. $\sqrt{2}$, $\sqrt[3]{5},\sqrt[4]{7},\sqrt[5]{11}$ which is bigger?
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question9" value="1">
+                    1.$\sqrt{2}$
+                </label>
+                <label>
+                    <input type="radio" name="question9" value="2">
+                    2. $\sqrt[3]{5}$
+                </label>
+                <label>
+                    <input type="radio" name="question9" value="3">
+                    3. $\sqrt[4]{7}$
+                </label>
+                <label>
+                    <input type="radio" name="question9" value="4">
+                    4. $\sqrt[5]{11}$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q10. If $\sqrt{3}-\sqrt{2}=x$, then what is the value of $\sqrt{6}$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question10" value="1">
+                    1. $x^2$
+                </label>
+                <label>
+                    <input type="radio" name="question10" value="2">
+                    2. $\sqrt{x}$
+                </label>
+                <label>
+                    <input type="radio" name="question10" value="3">
+                    3. $\frac{1}{4}(x^2+\frac{1}{x^2})$
+                </label>
+                <label>
+                    <input type="radio" name="question10" value="4">
+                    4. $\frac{1}{4}(x^2-\frac{1}{x^2})$
+                </label>
+            </div>
+        </div>
+
+        <div class="footer">
+            <button id="submit">Submit</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
