@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BODMAS Quiz</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+    </script>
+</head>
+
+<body class="body">
+    <div class="header">
+        <span class="span1">BODMAS</span>
+        <div class="head-footer">
+            <div class="span2"></div>
+            <div class="timer-container">
+                <div id="timer" class="timer">
+                    Time: 30:00
+                </div> <!-- Timer Display -->
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="quiz-container">
+            <div class="question-cont">
+                Q1. $6\times (5+3)-4 \div 2=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question1" value="1">
+                    1. $42$
+                </label>
+                <label>
+                    <input type="radio" name="question1" value="2">
+                    2. $44$
+                </label>
+                <label>
+                    <input type="radio" name="question1" value="3">
+                    3. $38$
+                </label>
+                <label>
+                    <input type="radio" name="question1" value="4">
+                    4. $48$
+                </label>
+                <label>
+                    <input type="radio" name="question1" value="5">
+                    5. None of these
+                </label>
+            </div>
+            <div class="question-cont">
+                Q2. $9+6 \times 2-8 \div 4=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question2" value="1">
+                    1. $20$
+                </label>
+                <label>
+                    <input type="radio" name="question2" value="2">
+                    2. $17$
+                </label>
+                <label>
+                    <input type="radio" name="question2" value="3">
+                    3. $16$
+                </label>
+                <label>
+                    <input type="radio" name="question2" value="4">
+                    4. 18
+                </label>
+            </div>
+            <div class="question-cont">
+                Q3. $16 \div (4+4)\times 2=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question3" value="1">
+                    1. $4$
+                </label>
+                <label>
+                    <input type="radio" name="question3" value="2">
+                    2. $8$
+                </label>
+                <label>
+                    <input type="radio" name="question3" value="3">
+                    3. $2$
+                </label>
+                <label>
+                    <input type="radio" name="question3" value="4">
+                    4. $1$
+                </label>
+                <label>
+                    <input type="radio" name="question3" value="5">
+                    5. None of these
+                </label>
+            </div>
+            <div class="question-cont">
+                Q4. $18-3\times(6\div 2)=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question4" value="1">
+                    1. $9$
+                </label>
+                <label>
+                    <input type="radio" name="question4" value="2">
+                    2. $12$
+                </label>
+                <label>
+                    <input type="radio" name="question4" value="3">
+                    3. $6$
+                </label>
+                <label>
+                    <input type="radio" name="question4" value="4">
+                    4. $15$
+                </label>
+                <label>
+                    <input type="radio" name="question4" value="5">
+                    5. None of these
+                </label>
+            </div>
+            <div class="question-cont">
+                Q5. $(25-5)\div 5+4\times 3=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question5" value="1">
+                    1. $16$
+                </label>
+                <label>
+                    <input type="radio" name="question5" value="2">
+                    2. $14$
+                </label>
+                <label>
+                    <input type="radio" name="question5" value="3">
+                    3. $18$
+                </label>
+                <label>
+                    <input type="radio" name="question5" value="4">
+                    4. $20$
+                </label>
+                <label>
+                    <input type="radio" name="question5" value="5">
+                    5. None of these
+                </label>
+            </div>
+            <div class="question-cont">
+                Q6. $8+(12\div 4\times 3)-7=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question6" value="1">
+                    1. $7$
+                </label>
+                <label>
+                    <input type="radio" name="question6" value="2">
+                    2. $8$
+                </label>
+                <label>
+                    <input type="radio" name="question6" value="3">
+                    3. $6$
+                </label>
+                <label>
+                    <input type="radio" name="question6" value="4">
+                    4. $9$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q7. $(36\div 6)\times(5-3)+4=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question7" value="1">
+                    1. $14$
+                </label>
+                <label>
+                    <input type="radio" name="question7" value="2">
+                    2. $16$
+                </label>
+                <label>
+                    <input type="radio" name="question7" value="3">
+                    3. $12$
+                </label>
+                <label>
+                    <input type="radio" name="question7" value="4">
+                    4. $10$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q8. $50\div 5+8\times 2-6=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question8" value="1">
+                    1. $20$
+                </label>
+                <label>
+                    <input type="radio" name="question8" value="2">
+                    2. $22$
+                </label>
+                <label>
+                    <input type="radio" name="question8" value="3">
+                    3. $24$
+                </label>
+                <label>
+                    <input type="radio" name="question8" value="4">
+                    4. $26$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q9. $(30 \div 5+2)\times (9-7)=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question9" value="1">
+                    1. $12$
+                </label>
+                <label>
+                    <input type="radio" name="question9" value="2">
+                    2. $14$
+                </label>
+                <label>
+                    <input type="radio" name="question9" value="3">
+                    3. $10$
+                </label>
+                <label>
+                    <input type="radio" name="question9" value="4">
+                    4. $16$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q10. $40\div (4+4)\times 6=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question10" value="1">
+                    1. $20$
+                </label>
+                <label>
+                    <input type="radio" name="question10" value="2">
+                    2. $48$
+                </label>
+                <label>
+                    <input type="radio" name="question10" value="3">
+                    3. $60$
+                </label>
+                <label>
+                    <input type="radio" name="question10" value="4">
+                    4. $30$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q11. $(15+5)\div 2 \times 3-4=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question11" value="1">
+                    1. $27$
+                </label>
+                <label>
+                    <input type="radio" name="question11" value="2">
+                    2. $20$
+                </label>
+                <label>
+                    <input type="radio" name="question11" value="3">
+                    3. $23$
+                </label>
+                <label>
+                    <input type="radio" name="question11" value="4">
+                    4. $19$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q12. $100 \div (20-10)+6 \times 4=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question12" value="1">
+                    1. $38$
+                </label>
+                <label>
+                    <input type="radio" name="question12" value="2">
+                    2. $30$
+                </label>
+                <label>
+                    <input type="radio" name="question12" value="3">
+                    3. $36$
+                </label>
+                <label>
+                    <input type="radio" name="question12" value="4">
+                    4. $32$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q13. $9 \times (8-6)+10 \div 5=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question13" value="1">
+                    1. $18$
+                </label>
+                <label>
+                    <input type="radio" name="question13" value="2">
+                    2. $22$
+                </label>
+                <label>
+                    <input type="radio" name="question13" value="3">
+                    3. $20$
+                </label>
+                <label>
+                    <input type="radio" name="question13" value="4">
+                    4. $16$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q14. $64 \div (8 \times 2)+5=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question14" value="1">
+                    1. $7$
+                </label>
+                <label>
+                    <input type="radio" name="question14" value="2">
+                    2. $9$
+                </label>
+                <label>
+                    <input type="radio" name="question14" value="3">
+                    3. $11$
+                </label>
+                <label>
+                    <input type="radio" name="question14" value="4">
+                    4. $13$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q15. $(49 \div 7)\times (8-5)+4=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question15" value="1">
+                    1. $16$
+                </label>
+                <label>
+                    <input type="radio" name="question15" value="2">
+                    2. $18$
+                </label>
+                <label>
+                    <input type="radio" name="question15" value="3">
+                    3. $14$
+                </label>
+                <label>
+                    <input type="radio" name="question15" value="4">
+                    4. $12$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q16. $72 \div (12+4)\times 5=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question16" value="1">
+                    1. $45$
+                </label>
+                <label>
+                    <input type="radio" name="question16" value="2">
+                    2. $30$
+                </label>
+                <label>
+                    <input type="radio" name="question16" value="3">
+                    3. $20$
+                </label>
+                <label>
+                    <input type="radio" name="question16" value="4">
+                    4. $28$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q17. $(90 \div 5)+(6 \times 2)-8=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question17" value="1">
+                    1. $26$
+                </label>
+                <label>
+                    <input type="radio" name="question17" value="2">
+                    2. $30$
+                </label>
+                <label>
+                    <input type="radio" name="question17" value="3">
+                    3. $22$
+                </label>
+                <label>
+                    <input type="radio" name="question17" value="4">
+                    4. $18$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q18. $(40\div 5)+(9 \times 2)-7=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question18" value="1">
+                    1. $15$
+                </label>
+                <label>
+                    <input type="radio" name="question18" value="2">
+                    2. $18$
+                </label>
+                <label>
+                    <input type="radio" name="question18" value="3">
+                    3. $17$
+                </label>
+                <label>
+                    <input type="radio" name="question18" value="4">
+                    4. $13$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q19. $81 \div (9+9)+7 \times 3=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question19" value="1">
+                    1. $23$
+                </label>
+                <label>
+                    <input type="radio" name="question19" value="2">
+                    2. $24$
+                </label>
+                <label>
+                    <input type="radio" name="question19" value="3">
+                    3. $21$
+                </label>
+                <label>
+                    <input type="radio" name="question19" value="4">
+                    4. $19$
+                </label>
+            </div>
+            <div class="question-cont">
+                Q20. $100 \div (25-5)+4 \times 5=?$
+            </div>
+            <div class="option-cont">
+                <label>
+                    <input type="radio" name="question20" value="1">
+                    1. $24$
+                </label>
+                <label>
+                    <input type="radio" name="question20" value="2">
+                    2. $28$
+                </label>
+                <label>
+                    <input type="radio" name="question20" value="3">
+                    3. $26$
+                </label>
+                <label>
+                    <input type="radio" name="question20" value="4">
+                    4. $30$
+                </label>
+            </div>
+        </div>
+
+        <div class="footer">
+            <button id="submit">Submit</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
