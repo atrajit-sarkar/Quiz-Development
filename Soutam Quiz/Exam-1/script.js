@@ -1,15 +1,18 @@
 // Correct Answers Object.....................
 const correctAnswers = {
-    question1: "1",
-    question2: "1",
-    question3: "3",
-    question4: "2",
+    question1: "3",
+    question2: "3",
+    question3: "1",
+    question4: "4",
     question5: "2",
-    question6: "3",
-    question7: "4",
-    question8: "3",
-    question9: "2",
-    question10: "4",
+    question6: "4",
+    question7: "2",
+    question8: "4",
+    question9: "1",
+    question10: "2",
+    question11: "2",
+    question12: "3",
+    question13: "2",
 };
 
 let interval; // Declare interval globally
@@ -82,7 +85,7 @@ function submitfunction() {
 
 
 // Set the starting time for the quiz (in seconds)
-let timeInSeconds = 900;
+let timeInSeconds = 3600;
 
 function startTimer() {
     const timerElement = document.getElementById('timer');
