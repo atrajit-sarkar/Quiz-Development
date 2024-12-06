@@ -258,7 +258,7 @@ img {
 }
 
 .question-button.active {
-    background-color: #4caf53;
+    border: 2px solid red;
     color: white;
 }
 
@@ -274,3 +274,9 @@ img {
     background-color: rgb(73, 2, 102);
     color: #fff;
 }
+
+.question-button.answered {
+    background-color: #4caf53; /* Change to green to show it's answered */
+    color: white; /* Text color for contrast */
+  }
+  

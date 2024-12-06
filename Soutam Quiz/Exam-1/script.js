@@ -179,11 +179,39 @@ questionDivs.forEach((div, index) => {
         if (isActiveReview) {
             reviewButton.innerHTML = `Remove Mark`; // Change button text
             questionButton.classList.add("review-active"); // Make the question button purple
+            questionButton.classList.remove("answered")
         } else {
             reviewButton.innerHTML = `Mark As Review`; // Reset button text
             questionButton.classList.remove("review-active"); // Revert question button color
         }
     });
+
+    // Add event listener to radio buttons in this question
+    const radioInputs = div.nextElementSibling.querySelectorAll('input[type="radio"]');
+    radioInputs.forEach((radio) => {
+        let lastClickedRadio = null; // Track the last clicked radio button
+        
+        radio.addEventListener('change', () => {
+            // If a radio button is selected, change the button color
+            questionButton.classList.add("answered"); // Add an "answered" class to the button
+        });
+
+        radio.addEventListener('click', (event) => {
+            if (lastClickedRadio === radio) {
+                // If clicking the same radio button again, uncheck it
+                radio.checked = false;
+                lastClickedRadio = null; // Reset the last clicked radio
+                questionButton.classList.remove("answered"); // Remove the answered class
+            } else {
+                // If clicking a new radio button, mark it and highlight the button
+                lastClickedRadio = radio;
+                questionButton.classList.add("answered"); // Add the answered class
+            }
+        });
+    });
+
+    
+
 
     // Create the question button click functionality
     questionButton.addEventListener("click", (event) => {
