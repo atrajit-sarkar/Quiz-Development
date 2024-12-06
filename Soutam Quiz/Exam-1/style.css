@@ -219,7 +219,9 @@ img {
     /* Distance from the top */
     left: 40px;
     /* Distance from the right */
-    width: 300px;
+    width: 350px;
+    height: 250px;
+    overflow-y: scroll;
     /* Set width */
     background-color: #f9f9f9;
     /* Light background for visibility */
@@ -242,13 +244,46 @@ img {
 }
 
 .question-button {
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    border-radius: 69px;
-    background-color: #cfb3e0;
+    padding: 12px 24px;
+    /* Slightly larger for better touch targets */
+    border: 1px solid #b292d3;
+    /* Subtle border matching the theme */
+    border-radius: 50px;
+    /* Retain rounded look but make it sleeker */
+    background-color: #b292d3;
+    /* Refined shade for a professional look */
+    color: #fff;
+    /* White text for contrast */
+    font-size: 16px;
+    /* Professional, readable font size */
+    font-weight: 500;
+    /* Moderate boldness */
     text-align: center;
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Adds depth */
+    transition: all 0.3s ease;
+    /* Smooth hover effect */
 }
+
+.question-button:hover {
+    background-color: #9f78c4;
+    /* Slightly darker for hover effect */
+    border-color: #9f78c4;
+    /* Match hover background */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    /* Enhanced shadow on hover */
+}
+
+.question-button:active {
+    background-color: #8a5fb0;
+    /* Darker shade for active state */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow change */
+    transform: scale(0.98);
+    /* Slight scale-down effect */
+}
+
 
 .question-cont.active {
     /* background-color: #f0f0f0; */
@@ -262,7 +297,7 @@ img {
     color: white;
 }
 
-.review-btn-cont{
+.review-btn-cont {
     margin-top: 20px;
     display: flex;
     justify-content: center;
@@ -270,13 +305,57 @@ img {
     /* width: 69px; */
 }
 
-.review-active{
+.review-active {
     background-color: rgb(73, 2, 102);
     color: #fff;
 }
 
 .question-button.answered {
-    background-color: #4caf53; /* Change to green to show it's answered */
-    color: white; /* Text color for contrast */
-  }
-  
+    background-color: #4caf53;
+    /* Change to green to show it's answered */
+    color: white;
+    /* Text color for contrast */
+}
+
+.answred-and-review {
+    background-color: #e7ea0b;
+}
+
+.review-btn {
+    background-color: #5fa0e5;
+    /* Professional blue */
+    color: #ffffff;
+    /* White text for contrast */
+    border: none;
+    /* Remove default border */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 10px 20px;
+    /* Adequate padding for better UX */
+    font-size: 16px;
+    /* Professional font size */
+    font-weight: 600;
+    /* Slightly bold for emphasis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: all 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.review-btn:hover {
+    background-color: #0056b3;
+    /* Darker blue for hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    /* More depth on hover */
+}
+
+.review-btn:active {
+    background-color: #004494;
+    /* Even darker blue when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow change */
+    transform: scale(0.98);
+    /* Slight scale-down effect */
+}

@@ -20,6 +20,36 @@ const correctAnswers = {
     question18: "3",
     question19: "1",
     question20: "3",
+    question21: "3",
+    question22: "2",
+    question23: "2",
+    question24: "2",
+    question25: "2",
+    question26: "1",
+    question27: "4",
+    question28: "4",
+    question29: "4",
+    question30: "3",
+    question31: "4",
+    question32: "4",
+    question33: "4",
+    question34: "2",
+    question35: "3",
+    question36: "2",
+    question37: "2",
+    question38: "3",
+    question39: "2",
+    question40: "4",
+    question41: "3",
+    question42: "4",
+    question43: "3",
+    question44: "1",
+    question45: "1",
+    question46: "1",
+    question47: "1",
+    question48: "1",
+    question49: "3",
+    question50: "4",
 };
 
 let interval; // Declare interval globally
@@ -146,6 +176,7 @@ const questionDivs = document.querySelectorAll('.question-cont'); // Select all 
 
 questionDivs.forEach((div, index) => {
     let isActiveReview = false; // Track if the question is marked for review
+    let isRadioChecked = false;
 
     // Create the review button container
     let reviewButtonContainer = document.createElement("div");
@@ -183,6 +214,10 @@ questionDivs.forEach((div, index) => {
         } else {
             reviewButton.innerHTML = `Mark As Review`; // Reset button text
             questionButton.classList.remove("review-active"); // Revert question button color
+            if (isRadioChecked) {
+                questionButton.classList.add("answered")
+            }
+
         }
     });
 
@@ -190,7 +225,8 @@ questionDivs.forEach((div, index) => {
     const radioInputs = div.nextElementSibling.querySelectorAll('input[type="radio"]');
     radioInputs.forEach((radio) => {
         let lastClickedRadio = null; // Track the last clicked radio button
-        
+
+
         radio.addEventListener('change', () => {
             // If a radio button is selected, change the button color
             questionButton.classList.add("answered"); // Add an "answered" class to the button
@@ -200,17 +236,22 @@ questionDivs.forEach((div, index) => {
             if (lastClickedRadio === radio) {
                 // If clicking the same radio button again, uncheck it
                 radio.checked = false;
+                isRadioChecked = false;
                 lastClickedRadio = null; // Reset the last clicked radio
                 questionButton.classList.remove("answered"); // Remove the answered class
             } else {
                 // If clicking a new radio button, mark it and highlight the button
                 lastClickedRadio = radio;
+                isRadioChecked = true;
                 questionButton.classList.add("answered"); // Add the answered class
             }
+
         });
+
+
     });
 
-    
+
 
 
     // Create the question button click functionality
