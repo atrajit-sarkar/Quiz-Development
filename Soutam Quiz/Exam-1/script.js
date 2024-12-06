@@ -13,6 +13,13 @@ const correctAnswers = {
     question11: "2",
     question12: "3",
     question13: "2",
+    question14: "2",
+    question15: "2",
+    question16: "1",
+    question17: "4",
+    question18: "3",
+    question19: "1",
+    question20: "3",
 };
 
 let interval; // Declare interval globally
@@ -128,3 +135,77 @@ TotalScore.innerHTML = `Full Marks=${(Object.keys(correctAnswers).length) * 2}`;
 document.getElementById("submit").addEventListener("click", function () {
     submitfunction();
 });
+
+
+
+
+
+// Question Pannel Development...........
+const question_pannel = document.querySelector('.question-panel');
+const questionDivs = document.querySelectorAll('.question-cont'); // Select all question divs
+
+questionDivs.forEach((div, index) => {
+    let isActiveReview = false; // Track if the question is marked for review
+
+    // Create the review button container
+    let reviewButtonContainer = document.createElement("div");
+    reviewButtonContainer.classList.add("review-btn-cont");
+
+    // Create the review button
+    let reviewButton = document.createElement("button");
+    reviewButton.setAttribute("class", "review-btn");
+    reviewButton.innerHTML = `Mark As Review`; // Default text
+
+    // Append review button to the review button container, and then append to the question div
+    div.append(reviewButtonContainer);
+    reviewButtonContainer.append(reviewButton);
+
+    // Assign IDs to each question div
+    div.id = (index + 1).toString();
+
+    // Create question button
+    let questionButton = document.createElement("div");
+    questionButton.classList.add("question-button"); // Add a class for styling
+    questionButton.innerHTML = `${index + 1}`; // Add anchor with link and text
+
+    // Append question button to the question panel
+    question_pannel.appendChild(questionButton);
+
+    // Add click event to the review button
+    reviewButton.addEventListener("click", () => {
+        isActiveReview = !isActiveReview;
+
+        // Change button text to "Remove Mark" if it's marked for review
+        if (isActiveReview) {
+            reviewButton.innerHTML = `Remove Mark`; // Change button text
+            questionButton.classList.add("review-active"); // Make the question button purple
+        } else {
+            reviewButton.innerHTML = `Mark As Review`; // Reset button text
+            questionButton.classList.remove("review-active"); // Revert question button color
+        }
+    });
+
+    // Create the question button click functionality
+    questionButton.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default anchor behavior (no page reload)
+
+        // Find the corresponding question div based on the ID
+        const targetQuestion = document.getElementById((index + 1).toString());
+
+        // Scroll to the question
+        targetQuestion.scrollIntoView({
+            behavior: 'instant', // Smooth scrolling
+            block: 'start',     // Align to the top of the viewport
+        });
+
+        // Optional: Highlight the active question by adding/removing classes
+        questionDivs.forEach((qDiv) => qDiv.classList.remove('active')); // Remove 'active' class from all questions
+        targetQuestion.classList.add('active'); // Add 'active' class to the clicked question
+
+        // Optionally update button active state
+        document.querySelectorAll('.question-button').forEach((btn) => btn.classList.remove('active'));
+        questionButton.classList.add('active');
+    });
+});
+
+
