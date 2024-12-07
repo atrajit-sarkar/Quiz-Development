@@ -100,7 +100,7 @@ body {
 
 /* Question container styling */
 .question-cont {
-    display: grid;
+    /* display: grid; */
     background-color: #007bff;
     color: #ffffff;
     padding: 15px;
@@ -380,7 +380,7 @@ img {
     height: 25px;
     border-radius: 50%;
     /* Circular buttons */
-    background-color: #6c63ff;
+    background-color: #a3a2a9;
     /* Eye-catching purple shade */
     color: white;
     font-size: 16px;
@@ -394,7 +394,7 @@ img {
 
 /* Hover effect for buttons */
 .buttonLayout .question-button:hover {
-    background-color: #4a47d3;
+    background-color: #808086;
     /* Darker purple on hover */
     transform: scale(1.1);
     /* Slight enlargement for emphasis */
@@ -576,4 +576,201 @@ img {
 .color-box.active {
     background-color: #00b894;
     /* Reddish for answered & reviewed */
+}
+
+/* General body styling */
+body {
+    margin: 20px;
+    margin-top: 10px;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header */
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    z-index: 1000;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timer-container {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Main container styling */
+.container {
+    margin-top: 120px;
+    display: grid;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Quiz container */
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.question-cont {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Option container */
+.option-cont {
+    background-color: rgb(188, 242, 243);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#submit {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 5px 12px;
+    font-size: 20px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    font-family: "Nabla", system-ui;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        padding: 8px;
+    }
+
+    .container {
+        margin-top: 100px;
+        padding: 15px;
+    }
+
+    .quiz-container {
+        gap: 15px;
+    }
+
+    .question-cont {
+        font-size: 0.9rem;
+    }
+
+    #submit {
+        font-size: 18px;
+        padding: 10px 16px;
+    }
+
+    .instruction2,
+    .question-panel {
+        width: 90%;
+        position: static;
+        margin: 10px auto;
+    }
+
+    .buttonLayout {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .question-button {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 5px;
+    }
+
+    .container {
+        margin-top: 90px;
+        padding: 10px;
+    }
+
+    .quiz-container {
+        gap: 10px;
+    }
+
+    .question-cont {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    #submit {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .instruction2,
+    .question-panel {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .buttonLayout {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+    }
+
+    .question-button {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+}
+
+#comprehension {
+    scroll-margin-top: 120px;
+    border: 2px solid gray;
+    border-radius: 20px;
+    background-color: peachpuff;
+    padding: 10px;
+}
+
+a {
+
+    text-decoration: none;
+
 }

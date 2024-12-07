@@ -50,6 +50,36 @@ const correctAnswers = {
     question48: "1",
     question49: "3",
     question50: "4",
+    question51: "2",
+    question52: "4",
+    question53: "1",
+    question54: "4",
+    question55: "4",
+    question56: "1",
+    question57: "3",
+    question58: "4",
+    question59: "4",
+    question60: "4",
+    question61: "2",
+    question62: "1",
+    question63: "4",
+    question64: "3",
+    question65: "2",
+    question66: "2",
+    question67: "4",
+    question68: "3",
+    question69: "3",
+    question70: "4",
+    question71: "1",
+    question72: "3",
+    question73: "2",
+    question74: "3",
+    question75: "1",
+    question76: "1",
+    question77: "4",
+    question78: "1",
+    question79: "4",
+    question80: "4",
 };
 
 let interval; // Declare interval globally
@@ -272,4 +302,12 @@ questionDivs.forEach((div, index) => {
 });
 
 
-
+// Go back Function....
+function goBackToHash() {
+    const recentHash = location.hash;
+    if (recentHash) {
+        location.hash = recentHash; // Navigates to the recent hash
+    } else {
+        alert("No recent target found!");
+    }
+}
