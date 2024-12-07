@@ -306,7 +306,7 @@ img {
 }
 
 .review-active {
-    background-color: rgb(73, 2, 102);
+    background-color: rgb(232, 143, 10);
     color: #fff;
 }
 
@@ -317,8 +317,8 @@ img {
     /* Text color for contrast */
 }
 
-.answred-and-review {
-    background-color: #e7ea0b;
+.answered-and-reviewed {
+    background-color: #a30bea;
 }
 
 .review-btn {

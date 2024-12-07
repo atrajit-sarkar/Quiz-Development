@@ -170,13 +170,13 @@ document.getElementById("submit").addEventListener("click", function () {
 
 
 
-// Question Pannel Development...........
+// Question Panel Development
 const question_pannel = document.querySelector('.question-panel');
 const questionDivs = document.querySelectorAll('.question-cont'); // Select all question divs
 
 questionDivs.forEach((div, index) => {
     let isActiveReview = false; // Track if the question is marked for review
-    let isRadioChecked = false;
+    let isRadioChecked = false; // Track if any radio button is selected
 
     // Create the review button container
     let reviewButtonContainer = document.createElement("div");
@@ -202,23 +202,28 @@ questionDivs.forEach((div, index) => {
     // Append question button to the question panel
     question_pannel.appendChild(questionButton);
 
+    // Function to update question button classes
+    const updateQuestionButtonClasses = () => {
+        questionButton.classList.remove("answered", "review-active", "answered-and-reviewed");
+
+        if (isRadioChecked && isActiveReview) {
+            questionButton.classList.add("answered-and-reviewed");
+        } else if (isRadioChecked) {
+            questionButton.classList.add("answered");
+        } else if (isActiveReview) {
+            questionButton.classList.add("review-active");
+        }
+    };
+
     // Add click event to the review button
     reviewButton.addEventListener("click", () => {
         isActiveReview = !isActiveReview;
 
         // Change button text to "Remove Mark" if it's marked for review
-        if (isActiveReview) {
-            reviewButton.innerHTML = `Remove Mark`; // Change button text
-            questionButton.classList.add("review-active"); // Make the question button purple
-            questionButton.classList.remove("answered")
-        } else {
-            reviewButton.innerHTML = `Mark As Review`; // Reset button text
-            questionButton.classList.remove("review-active"); // Revert question button color
-            if (isRadioChecked) {
-                questionButton.classList.add("answered")
-            }
+        reviewButton.innerHTML = isActiveReview ? `Remove Mark` : `Mark As Review`;
 
-        }
+        // Update question button classes
+        updateQuestionButtonClasses();
     });
 
     // Add event listener to radio buttons in this question
@@ -226,33 +231,22 @@ questionDivs.forEach((div, index) => {
     radioInputs.forEach((radio) => {
         let lastClickedRadio = null; // Track the last clicked radio button
 
-
-        radio.addEventListener('change', () => {
-            // If a radio button is selected, change the button color
-            questionButton.classList.add("answered"); // Add an "answered" class to the button
-        });
-
-        radio.addEventListener('click', (event) => {
+        radio.addEventListener('click', () => {
             if (lastClickedRadio === radio) {
                 // If clicking the same radio button again, uncheck it
                 radio.checked = false;
                 isRadioChecked = false;
                 lastClickedRadio = null; // Reset the last clicked radio
-                questionButton.classList.remove("answered"); // Remove the answered class
             } else {
                 // If clicking a new radio button, mark it and highlight the button
                 lastClickedRadio = radio;
                 isRadioChecked = true;
-                questionButton.classList.add("answered"); // Add the answered class
             }
 
+            // Update question button classes
+            updateQuestionButtonClasses();
         });
-
-
     });
-
-
-
 
     // Create the question button click functionality
     questionButton.addEventListener("click", (event) => {
@@ -267,7 +261,7 @@ questionDivs.forEach((div, index) => {
             block: 'start',     // Align to the top of the viewport
         });
 
-        // Optional: Highlight the active question by adding/removing classes
+        // Highlight the active question by adding/removing classes
         questionDivs.forEach((qDiv) => qDiv.classList.remove('active')); // Remove 'active' class from all questions
         targetQuestion.classList.add('active'); // Add 'active' class to the clicked question
 
@@ -276,5 +270,6 @@ questionDivs.forEach((div, index) => {
         questionButton.classList.add('active');
     });
 });
+
 
 
