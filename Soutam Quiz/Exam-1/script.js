@@ -171,7 +171,7 @@ document.getElementById("submit").addEventListener("click", function () {
 
 
 // Question Panel Development
-const question_pannel = document.querySelector('.question-panel');
+const question_pannel = document.querySelector('.buttonLayout');
 const questionDivs = document.querySelectorAll('.question-cont'); // Select all question divs
 
 questionDivs.forEach((div, index) => {

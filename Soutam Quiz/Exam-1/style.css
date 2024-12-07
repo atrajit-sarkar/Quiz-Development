@@ -211,17 +211,16 @@ img {
 
 .question-panel {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
+    height: 380px;
+    width: 25%;
     position: fixed;
     /* Fixes the div to the viewport */
     top: 150px;
     /* Distance from the top */
-    left: 40px;
+    left: 30px;
     /* Distance from the right */
-    width: 350px;
-    height: 250px;
-    overflow-y: scroll;
     /* Set width */
     background-color: #f9f9f9;
     /* Light background for visibility */
@@ -231,11 +230,12 @@ img {
     /* Rounded corners for a window-like effect */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     /* Adds a shadow */
-    padding: 15px;
+    padding: 10px;
     /* Padding inside the div */
     z-index: 1000;
     /* Ensures it stays above other elements */
 }
+
 
 .question-panel h1 {
     margin: 0;
@@ -292,10 +292,10 @@ img {
     /* Optional border for the active question */
 }
 
-.question-button.active {
+/* .question-button.active {
     border: 2px solid red;
     color: white;
-}
+} */
 
 .review-btn-cont {
     margin-top: 20px;
@@ -305,21 +305,7 @@ img {
     /* width: 69px; */
 }
 
-.review-active {
-    background-color: rgb(232, 143, 10);
-    color: #fff;
-}
 
-.question-button.answered {
-    background-color: #4caf53;
-    /* Change to green to show it's answered */
-    color: white;
-    /* Text color for contrast */
-}
-
-.answered-and-reviewed {
-    background-color: #a30bea;
-}
 
 .review-btn {
     background-color: #5fa0e5;
@@ -358,4 +344,236 @@ img {
     /* Subtle shadow change */
     transform: scale(0.98);
     /* Slight scale-down effect */
+}
+
+
+.buttonLayout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* Space between buttons */
+    width: 350px;
+    height: 300px;
+    overflow-y: auto;
+    /* Smooth vertical scrolling */
+    border: 2px solid #00b894;
+    /* Professional green shade */
+    border-radius: 15px;
+    /* Smooth edges */
+    padding: 10px;
+    background-color: #f8f9fa;
+    /* Light gray background for contrast */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    scrollbar-width: thin;
+    /* Slim scrollbars */
+    scrollbar-color: #00b894 #f8f9fa;
+    /* Stylish scrollbar colors */
+}
+
+/* Style for individual buttons */
+.buttonLayout .question-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    /* Circular buttons */
+    background-color: #6c63ff;
+    /* Eye-catching purple shade */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    /* Smooth hover effects */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Light shadow for depth */
+}
+
+/* Hover effect for buttons */
+.buttonLayout .question-button:hover {
+    background-color: #4a47d3;
+    /* Darker purple on hover */
+    transform: scale(1.1);
+    /* Slight enlargement for emphasis */
+}
+
+/* Active state styling */
+.buttonLayout .question-button.active {
+    background-color: #00b894;
+    /* Green for active questions */
+    border: 2px solid red;
+}
+
+/* Answered state */
+.buttonLayout .question-button.answered {
+    background-color: #4caf53;
+    /* Change to green to show it's answered */
+    color: white;
+    /* Text color for contrast */
+    /* Green for answered questions */
+}
+
+/* Review state */
+.buttonLayout .question-button.review-active {
+    background-color: rgb(232, 143, 10);
+    color: #fff;
+    /* Orange for review */
+}
+
+/* Answered and reviewed state */
+.buttonLayout .question-button.answered-and-reviewed {
+    background-color: #a30bea;
+    /* Reddish shade for answered & reviewed */
+}
+
+/* Customize the scrollbar for a modern look */
+.buttonLayout::-webkit-scrollbar {
+    width: 8px;
+}
+
+.buttonLayout::-webkit-scrollbar-thumb {
+    background-color: #00b894;
+    /* Green thumb */
+    border-radius: 10px;
+}
+
+.buttonLayout::-webkit-scrollbar-track {
+    background-color: #f8f9fa;
+    /* Match background */
+}
+
+.instruction2 {
+    font-size: 16px;
+    /* Readable font size */
+    font-family: 'Arial', sans-serif;
+    /* Professional font */
+    color: #333333;
+    /* Neutral dark gray text for readability */
+    background-color: #f1f8ff;
+    /* Light blue background for contrast */
+    border: 1px solid #00b894;
+    /* Match the green from the button layout */
+    border-radius: 8px;
+    /* Slightly rounded corners for a polished look */
+    padding: 10px;
+    /* Comfortable spacing inside the box */
+    margin-bottom: 5px;
+    /* Add spacing from elements below */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    text-align: left;
+    /* Left-align text for a clean layout */
+    line-height: 1.5;
+    /* Improve text readability */
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* height: 75%px; */
+    width: 25%;
+    position: fixed;
+    /* Fixes the div to the viewport */
+    top: 150px;
+    /* Distance from the top */
+    right: 20px;
+    /* Distance from the right */
+    /* Set width */
+    background-color: #f9f9f9;
+    /* Light background for visibility */
+    border: 1px solid #ccc;
+    /* Optional border */
+    border-radius: 10px;
+    /* Rounded corners for a window-like effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Adds a shadow */
+    padding: 10px;
+    /* Padding inside the div */
+    z-index: 1000;
+    /* Ensures it stays above other elements */
+}
+
+/* Add hover effect for interactivity (optional) */
+.instruction2:hover {
+    background-color: #e8f5e9;
+    /* Light green on hover */
+    border-color: #27ae60;
+    /* Match hover color to the buttons */
+    transform: translateY(-2px);
+    /* Slight lift effect */
+    transition: background-color 0.3s, transform 0.2s;
+    /* Smooth hover effect */
+}
+
+
+.instruction2 strong {
+    color: #2d3436;
+    /* Slightly darker for emphasis */
+}
+
+.instruction2 ul {
+    list-style-type: disc;
+    /* Standard bullet points */
+    margin-left: 20px;
+    /* Indent the list */
+    margin-bottom: 15px;
+    /* Space below the list */
+}
+
+.instruction2 hr {
+    border: none;
+    border-top: 1px solid #dfe6e9;
+    /* Light line separator */
+    margin: 10px 0;
+    /* Vertical spacing */
+}
+
+.color-code {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Space between items */
+    margin-top: 10px;
+}
+
+.color-item {
+    display: flex;
+    align-items: center;
+    /* Align text and color box vertically */
+    gap: 10px;
+    /* Space between color box and text */
+    font-size: 14px;
+    /* Slightly smaller font for labels */
+}
+
+.color-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    /* Rounded corners for color boxes */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle depth for boxes */
+}
+
+/* State-specific colors for the color boxes */
+.color-box.answered {
+    background-color: #4caf53;
+    /* Green for answered */
+}
+
+.color-box.review-active {
+    background-color: rgb(232, 143, 10);
+    /* Orange for review */
+}
+
+.color-box.answered-and-reviewed {
+    background-color: #a30bea;
+    /* Reddish for answered & reviewed */
+}
+
+.color-box.active {
+    background-color: #00b894;
+    /* Reddish for answered & reviewed */
 }
