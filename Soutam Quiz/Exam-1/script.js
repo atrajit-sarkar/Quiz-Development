@@ -86,6 +86,7 @@ let interval; // Declare interval globally
 
 function submitfunction() {
     timeInSeconds = -1;
+    saveAnswers(); // Save the answers
     let timer = document.querySelector(".timer-container")
     timer.remove()
 
@@ -156,6 +157,7 @@ let timeInSeconds = 3600;
 
 function startTimer() {
     const timerElement = document.getElementById('timer');
+    loadTimer();
 
     // Start the timer and store the interval ID in 'interval'
     interval = setInterval(() => {
@@ -182,11 +184,12 @@ function startTimer() {
 
         // Decrease the time by 1 second
         timeInSeconds--;
+        saveTimer(); // Save timer value every second
     }, 1000);
 }
 
 // Start the timer when the page loads
-window.onload = startTimer;
+// window.onload = startTimer;
 
 let TotalScore = document.querySelector(".span2");
 TotalScore.innerHTML = `Full Marks=${(Object.keys(correctAnswers).length) * 2}`;
@@ -243,6 +246,7 @@ questionDivs.forEach((div, index) => {
         } else if (isActiveReview) {
             questionButton.classList.add("review-active");
         }
+        saveExamState(); // Save state whenever indicators change
     };
 
     // Add click event to the review button
@@ -298,6 +302,7 @@ questionDivs.forEach((div, index) => {
         // Optionally update button active state
         document.querySelectorAll('.question-button').forEach((btn) => btn.classList.remove('active'));
         questionButton.classList.add('active');
+        saveExamState(); // Save state whenever indicators change
     });
 });
 
@@ -311,3 +316,163 @@ function goBackToHash() {
         alert("No recent target found!");
     }
 }
+
+
+
+// Disable reloads and dev tools
+document.addEventListener("keydown", (event) => {
+    const forbiddenKeys = [
+        { key: "F5" },
+        { ctrlKey: true, key: "r" },
+        { ctrlKey: true, shiftKey: true, key: "I" },
+        { ctrlKey: true, key: "U" },
+        { ctrlKey: true, shiftKey: true, key: "C" },
+    ];
+    if (forbiddenKeys.some((k) => Object.keys(k).every((key) => k[key] === event[key]))) {
+        event.preventDefault();
+        alert("This action is disabled.");
+    }
+});
+
+document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+window.addEventListener("beforeunload", function (event) {
+    // Custom message (note: most browsers ignore the actual message text now)
+    const message = "Are you sure you want to leave this page?";
+    event.preventDefault(); // Some browsers require this for the dialog to appear
+    event.returnValue = message; // Display the message in the dialog
+
+    // Returning a value is necessary to trigger the confirmation
+    return message;
+});
+
+
+
+// Save and reload data even after reloading the page
+
+// Save and load answers
+function saveAnswers() {
+    const answers = {};
+    const inputs = document.querySelectorAll("input[type='radio']");
+    inputs.forEach((input) => {
+        if (input.checked) {
+            answers[input.name] = input.value;
+        }
+    });
+    localStorage.setItem("savedAnswers", JSON.stringify(answers));
+}
+
+function loadAnswers() {
+    const savedAnswers = JSON.parse(localStorage.getItem("savedAnswers")) || {};
+    const inputs = document.querySelectorAll("input[type='radio']");
+    inputs.forEach((input) => {
+        if (savedAnswers[input.name] === input.value) {
+            input.checked = true;
+        }
+    });
+}
+
+// Save and load timer
+function saveTimer() {
+    localStorage.setItem("timeRemaining", timeInSeconds);
+}
+
+function loadTimer() {
+    const savedTime = localStorage.getItem("timeRemaining");
+    if (savedTime) {
+        timeInSeconds = parseInt(savedTime, 10);
+    }
+}
+
+// Save answers when inputs change
+const inputs = document.querySelectorAll("input[type='radio']");
+inputs.forEach((input) => {
+    input.addEventListener("change", saveAnswers);
+});
+
+
+
+// save all the states 
+
+// Save and Load Exam State
+function saveExamState() {
+    const state = {
+        buttonStates: {}, // To save button indicator states
+        reviewStates: {}, // To save review button states
+        scrollPosition: window.scrollY, // Save current scroll position
+        activeQuestion: document.querySelector('.question-cont.active')?.id || null, // Active question ID
+    };
+
+    // Save button states (answered, review-active, etc.)
+    document.querySelectorAll('.question-button').forEach((button) => {
+        state.buttonStates[button.textContent] = {
+            classes: Array.from(button.classList), // Save classes
+        };
+    });
+
+    // Save review button states
+    document.querySelectorAll('.review-btn').forEach((btn, index) => {
+        state.reviewStates[`question${index + 1}`] = btn.textContent.includes('Remove Mark'); // Save review state
+    });
+
+    localStorage.setItem("examState", JSON.stringify(state));
+}
+
+function loadExamState() {
+    const state = JSON.parse(localStorage.getItem("examState")) || {};
+
+    // Restore button states
+    if (state.buttonStates) {
+        Object.entries(state.buttonStates).forEach(([buttonText, data]) => {
+            const button = Array.from(document.querySelectorAll('.question-button'))
+                .find((btn) => btn.textContent === buttonText);
+            if (button) {
+                button.className = ""; // Clear all classes
+                data.classes.forEach((cls) => button.classList.add(cls)); // Restore saved classes
+            }
+        });
+    }
+
+    // Restore review button states
+    if (state.reviewStates) {
+        Object.entries(state.reviewStates).forEach(([questionId, isReviewed], index) => {
+            const reviewBtn = document.querySelectorAll('.review-btn')[index];
+            if (reviewBtn) {
+                reviewBtn.textContent = isReviewed ? 'Remove Mark' : 'Mark As Review';
+            }
+        });
+    }
+
+    // Restore scroll position
+    if (state.scrollPosition) {
+        window.scrollTo(0, state.scrollPosition);
+    }
+
+    // Restore active question
+    if (state.activeQuestion) {
+        const activeQuestion = document.getElementById(state.activeQuestion);
+        if (activeQuestion) {
+            document.querySelectorAll('.question-cont').forEach((qDiv) => qDiv.classList.remove('active'));
+            activeQuestion.classList.add('active');
+        }
+    }
+}
+
+
+// Save scroll position dynamically
+window.addEventListener("scroll", saveExamState);
+
+// Load exam state on page load
+window.onload = function () {
+    loadAnswers(); // Restore selected answers
+    loadExamState(); // Restore other exam states
+    startTimer(); // Start or restore the timer
+};
+
+// Save answers and state before unloading the page
+window.addEventListener("beforeunload", () => {
+    saveAnswers();
+    saveTimer();
+    saveExamState();
+});
+

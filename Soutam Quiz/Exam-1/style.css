@@ -214,26 +214,16 @@ img {
     flex-direction: column;
     gap: 10px;
     height: 380px;
-    width: 25%;
+    width: 20%;
     position: fixed;
-    /* Fixes the div to the viewport */
     top: 150px;
-    /* Distance from the top */
-    left: 30px;
-    /* Distance from the right */
-    /* Set width */
+    left: 16px;
     background-color: #f9f9f9;
-    /* Light background for visibility */
     border: 1px solid #ccc;
-    /* Optional border */
     border-radius: 10px;
-    /* Rounded corners for a window-like effect */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* Adds a shadow */
     padding: 10px;
-    /* Padding inside the div */
     z-index: 1000;
-    /* Ensures it stays above other elements */
 }
 
 
@@ -351,24 +341,16 @@ img {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    /* Space between buttons */
-    width: 350px;
+    width: 90%;
     height: 300px;
     overflow-y: auto;
-    /* Smooth vertical scrolling */
     border: 2px solid #00b894;
-    /* Professional green shade */
     border-radius: 15px;
-    /* Smooth edges */
     padding: 10px;
     background-color: #f8f9fa;
-    /* Light gray background for contrast */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow for depth */
     scrollbar-width: thin;
-    /* Slim scrollbars */
     scrollbar-color: #00b894 #f8f9fa;
-    /* Stylish scrollbar colors */
 }
 
 /* Style for individual buttons */
@@ -376,8 +358,8 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 25px;
-    height: 25px;
+    width: 7px;
+    height: 10px;
     border-radius: 50%;
     /* Circular buttons */
     background-color: #a3a2a9;
@@ -447,52 +429,29 @@ img {
 
 .instruction2 {
     font-size: 16px;
-    /* Readable font size */
     font-family: 'Arial', sans-serif;
-    /* Professional font */
     color: #333333;
-    /* Neutral dark gray text for readability */
     background-color: #f1f8ff;
-    /* Light blue background for contrast */
     border: 1px solid #00b894;
-    /* Match the green from the button layout */
     border-radius: 8px;
-    /* Slightly rounded corners for a polished look */
     padding: 10px;
-    /* Comfortable spacing inside the box */
     margin-bottom: 5px;
-    /* Add spacing from elements below */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow for depth */
     text-align: left;
-    /* Left-align text for a clean layout */
     line-height: 1.5;
-    /* Improve text readability */
-
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* height: 75%px; */
-    width: 25%;
+    width: 22%;
     position: fixed;
-    /* Fixes the div to the viewport */
     top: 150px;
-    /* Distance from the top */
     right: 20px;
-    /* Distance from the right */
-    /* Set width */
     background-color: #f9f9f9;
-    /* Light background for visibility */
     border: 1px solid #ccc;
-    /* Optional border */
     border-radius: 10px;
-    /* Rounded corners for a window-like effect */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* Adds a shadow */
     padding: 10px;
-    /* Padding inside the div */
     z-index: 1000;
-    /* Ensures it stays above other elements */
 }
 
 /* Add hover effect for interactivity (optional) */
@@ -700,9 +659,10 @@ body {
 
     .instruction2,
     .question-panel {
-        width: 90%;
+        width: 70%;
         position: static;
         margin: 10px auto;
+        left: 5px;
     }
 
     .buttonLayout {
